@@ -1,0 +1,61 @@
+.app {
+  --primary-light: #ffffff;
+  --secondary-light: rgb(244, 244, 244);
+  --text-light: #212529;
+  --primary-dark: #212529;
+  --secondary-dark: rgb(52, 58, 64);
+  --text-dark: #f8f9fa;
+  color: var(--text-light);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  background: linear-gradient(
+    80deg,
+    rgba(0, 198, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.2) 60%,
+    rgba(0, 198, 255, 0.1) 100%
+  );
+  background-color: var(--primary-light);
+}
+
+/* Animation classes */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideIn {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Dark theme adjustments */
+:global(.dark) .app {
+  color: var(--text-dark);
+  background: linear-gradient(
+    80deg,
+    rgba(0, 198, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 198, 255, 0.1) 100%
+  );
+  background-color: var(--primary-dark);
+}
+
+/* Scrollbar styling */

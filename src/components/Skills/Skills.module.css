@@ -1,0 +1,127 @@
+.skills {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.categoriesGrid > :first-child {
+  grid-column: 1 / -1;
+}
+
+.categoriesGrid > :first-child .skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.category {
+  background: rgba(0, 198, 255, 0.01);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(52, 58, 64, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(52, 58, 64, 0.05);
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.category.fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.category h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skillIcon {
+  font-size: 1.8rem;
+  color: #007bff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillInfo {
+  flex: 1;
+}
+
+.skillInfo span {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.progressBar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #00ff88);
+  transform-origin: left;
+  animation: growProgress 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Dark theme adjustments */
+:global(.dark) .category {
+  background: rgba(52, 58, 64, 0.2);
+  border-color: rgba(244, 244, 244, 0.05);
+}
+
+:global(.dark) .category h3 {
+  color: var(--text-dark);
+  border-bottom-color: var(--primary-dark);
+}
+
+:global(.dark) .progressBar {
+  background: rgba(255, 255, 255, 0.1);
+}
