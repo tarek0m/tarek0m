@@ -9,6 +9,7 @@ import { Experience } from '@components/Experience/Experience';
 import { Education } from '@components/Education/Education';
 import { Contact } from '@components/Contact/Contact';
 import { ThemeProvider } from './context/ThemeContext';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -37,6 +38,7 @@ function App() {
           <Contact />
         </main>
       </div>
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
