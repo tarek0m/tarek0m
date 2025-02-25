@@ -2,6 +2,10 @@
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -24,9 +28,9 @@
 
 .photo {
   aspect-ratio: 1;
-  border-radius: 20px;
+  border-radius: 50px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 20px 10px -10px rgba(0, 198, 255, 0.2);
 }
 
 .photo img {
@@ -57,7 +61,7 @@
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #007bff;
+  color: rgb(0, 123, 255);
 }
 
 .statLabel {
@@ -123,8 +127,12 @@
   }
 
   .photoContainer {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
+  }
+
+  .photo {
+    border-radius: 100%;
   }
 }
 

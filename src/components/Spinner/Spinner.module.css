@@ -1,0 +1,31 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 8px solid rgba(0, 198, 255, 0.05);
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark theme adjustments */
+:global(.dark) .spinner {
+  border: 8px solid rgb(244, 244, 244, 0.05);
+  border-top: 8px solid #00c6ff;
+  box-shadow: 0 0 25px rgba(244, 244, 244, 0.1);
+}

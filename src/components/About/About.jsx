@@ -20,11 +20,13 @@ export function About({ projects }) {
           </div>
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>1+</span>
+              <span className={styles.statNumber}>
+                {new Date().getFullYear() - 2024}+
+              </span>
               <span className={styles.statLabel}>Years Experience</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>2{projects.length}+</span>
+              <span className={styles.statNumber}>{projects.length}+</span>
               <span className={styles.statLabel}>Projects</span>
             </div>
             <div className={styles.statItem}>

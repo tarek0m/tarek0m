@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 198, 255, 0.01);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,15 +16,18 @@
 
 .modalContent {
   color: var(--text-light);
-  background: var(--primary-light);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(52, 58, 64, 0.05);
   padding: 2rem;
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(52, 58, 64, 0.05);
 }
 
 .closeButton {
@@ -83,6 +86,12 @@
   margin: 1rem 0;
 }
 
+.readme img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
 .slideIn {
   animation: slideIn 0.3s ease forwards;
 }
@@ -99,8 +108,13 @@
 }
 
 /* Dark theme adjustments */
+:global(.dark) .modalOverlay {
+  background: rgba(52, 58, 64, 0.2);
+}
 :global(.dark) .modalContent {
-  background: var(--primary-dark);
+  background: rgba(52, 58, 64, 0.85);
+  border-color: rgba(244, 244, 244, 0.05);
+  box-shadow: 0 10px 25px rgba(244, 244, 244, 0.1);
   color: var(--text-dark);
 }
 

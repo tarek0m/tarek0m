@@ -12,6 +12,8 @@ export function ProjectModal({ project, onClose }) {
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
+  console.log('ProjectModal rendered:', project);
+
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div

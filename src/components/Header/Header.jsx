@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/useTheme';
+import tarek from '../../../public/tarek.svg';
 import styles from './Header.module.css';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
@@ -14,8 +15,9 @@ export function Header() {
       { label: '', id: '#' },
       { label: 'About', id: 'about' },
       { label: 'Skills', id: 'skills' },
-      // { label: 'Projects', id: 'projects' },
+      { label: 'Projects', id: 'projects' },
       { label: 'Experience', id: 'experience' },
+      { label: 'Education', id: 'education' },
       { label: 'Contact', id: 'contact' },
     ],
     []
@@ -62,7 +64,8 @@ export function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <button className={styles.logo} onClick={() => scrollToSection('#')}>
+        <button className={styles.logoBtn} onClick={() => scrollToSection('#')}>
+          <img src={tarek} alt='Logo' className={styles.logoImg} />
           <span>Portfolio</span>
         </button>
 

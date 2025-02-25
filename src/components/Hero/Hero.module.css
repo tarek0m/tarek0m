@@ -24,7 +24,7 @@
   font-size: 4rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
-  background: linear-gradient(90deg, #007bff, #00c6ff);
+  background: linear-gradient(90deg, rgb(0, 123, 255), rgb(0, 198, 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -213,6 +213,10 @@
 }
 
 /* Dark theme adjustments */
+:global(.dark) .name img {
+  filter: invert(1) drop-shadow(0 0 15px rgba(0, 198, 255, 1));
+}
+
 :global(.dark) .primaryBtn {
   color: var(--text-dark);
 }

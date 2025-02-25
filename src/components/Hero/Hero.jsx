@@ -61,7 +61,9 @@ export function Hero() {
     <section id='#' className={styles.hero}>
       <div className={styles.content}>
         <div className={styles.greeting}>Hello, I&apos;m</div>
-        <h1 className={styles.name}>Tarek</h1>
+        <h1 className={styles.name}>
+          <img src='/TarekAlnaggarHandwritten.svg' alt='Tarek Alnaggar' />
+        </h1>
         <div className={styles.roleWrapper}>
           <span className={styles.roleIntro}>I&apos;m a </span>
           <span ref={textRef} className={styles.role}></span>

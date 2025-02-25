@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.logo {
+.logoBtn {
   background: none;
   border: none;
   cursor: pointer;
@@ -32,6 +32,25 @@
   font-weight: bold;
   text-decoration: none;
   color: var(--text-light);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0;
+  filter: drop-shadow(0 0 5px rgba(52, 58, 64, 1));
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.logoBtn:hover .logoImg {
+  transform: translateY(10%);
 }
 
 .nav {
@@ -108,7 +127,11 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-:global(.dark) .logo,
+:global(.dark) .logoImg {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 1));
+}
+
+:global(.dark) .logoBtn,
 :global(.dark) .navItem,
 :global(.dark) .themeToggle,
 :global(.dark) .menuButton {

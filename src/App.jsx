@@ -31,7 +31,7 @@ function App() {
           <Hero />
           <About projects={projects} />
           <Skills />
-          {/* <Projects projects={projects} setProjects={setProjects} /> */}
+          <Projects projects={projects} setProjects={setProjects} />
           <Experience />
           <Education />
           <Contact />
