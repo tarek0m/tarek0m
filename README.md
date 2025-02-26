@@ -1,4 +1,4 @@
-[# 💫 About Me:
+# 💫 About Me:
 
 Hello! I'm a passionate Full Stack Developer with expertise in modern web technologies. I love creating efficient, scalable, and user-friendly applications that solve real-world problems.<br><br>With a strong foundation in both front-end and back-end development, I bring ideas to life through clean code and intuitive design.
 
@@ -57,11 +57,11 @@ Hello! I'm a passionate Full Stack Developer with expertise in modern web techno
 # 📊 GitHub Stats:
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false&layout=compact">
+  <img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false&layout=compact">
   <br>
-  <img src="https://github-readme-stats.vercel.app/api?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false">
+  <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false">
   <br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tarek0m&theme=github_dark_dimmed&hide_border=true">
+  <img alt="GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com/?user=tarek0m&theme=github_dark_dimmed&hide_border=true">
 </div>
 
 ## 🏆 GitHub Trophies
@@ -75,4 +75,3 @@ Hello! I'm a passionate Full Stack Developer with expertise in modern web techno
 </div>
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-](https://github.com/tarek0m)
