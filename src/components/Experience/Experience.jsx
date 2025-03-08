@@ -13,7 +13,7 @@ export function Experience() {
       id: 1,
       company: 'Future of Egypt - جهاز مستقبل مصر للتنمية المستدامة',
       position: 'Network Support Engineer / Soldier',
-      period: 'Jan 2024 - March 2025',
+      period: 'Mar 2024 - Mar 2025',
       location: 'Military Service',
       description:
         'Maintained and troubleshooted network infrastructure in the Egyptian Armed Forces, ensuring smooth operations under pressure.',

@@ -31,53 +31,49 @@
 }
 
 .closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
+  position: sticky;
+  top: 0;
+  right: 0;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-light);
+  color: var(--text-dark);
+  background-color: var(--text-light);
+  border-radius: 50%;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-  padding: 0.5rem;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  float: right;
+  z-index: 10;
 }
 
 .closeButton:hover {
   opacity: 1;
 }
-
 .readme {
   margin-top: 1.5rem;
   line-height: 1.6;
 }
-
 .readme h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-
 .readme h2 {
   font-size: 1.5rem;
   margin: 1.5rem 0 1rem;
 }
-
 .readme p {
   margin-bottom: 1rem;
 }
-
 .readme code {
   background: var(--secondary-light);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
 }
-
 .readme pre {
   background: var(--secondary-light);
   padding: 1rem;
@@ -85,17 +81,14 @@
   overflow-x: auto;
   margin: 1rem 0;
 }
-
 .readme img {
   max-width: 100%;
   border-radius: 8px;
   margin: 1rem 0;
 }
-
 .slideIn {
   animation: slideIn 0.3s ease forwards;
 }
-
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -115,10 +108,6 @@
   background: rgba(52, 58, 64, 0.85);
   border-color: rgba(244, 244, 244, 0.05);
   box-shadow: 0 10px 25px rgba(244, 244, 244, 0.1);
-  color: var(--text-dark);
-}
-
-:global(.dark) .closeButton {
   color: var(--text-dark);
 }
 

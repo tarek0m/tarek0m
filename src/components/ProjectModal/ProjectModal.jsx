@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProjectModal.module.css';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 export function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -11,8 +12,6 @@ export function ProjectModal({ project, onClose }) {
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
-
-  console.log('ProjectModal rendered:', project);
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
@@ -25,7 +24,9 @@ export function ProjectModal({ project, onClose }) {
         </button>
         <div className={styles.readme}>
           {project.readme ? (
-            <ReactMarkdown>{project.readme}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+              {project.readme}
+            </ReactMarkdown>
           ) : (
             <>
               <h1>{project.name}</h1>

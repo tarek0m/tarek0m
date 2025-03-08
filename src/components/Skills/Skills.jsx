@@ -14,6 +14,7 @@ import {
   SiTypescript,
   SiMui,
   SiRedux,
+  SiGraphql,
   SiMysql,
   SiPhp,
   SiTensorflow,
@@ -37,6 +38,7 @@ const skillCategories = {
     { name: 'PHP', icon: <SiPhp />, level: 65 },
     { name: 'MySQL', icon: <SiMysql />, level: 75 },
     { name: 'REST APIs', icon: <AiOutlineApi />, level: 90 },
+    { name: 'GraphQL', icon: <SiGraphql />, level: 65 },
   ],
   'Tools & Practices': [
     { name: 'Git', icon: <FaGit />, level: 70 },

@@ -17,7 +17,7 @@ export function Projects({ projects, setProjects }) {
     'tarek0m',
     'Graph-based-Movie-Recommendation-System',
     'google-flights-clone',
-    'launch-countdown-timer',
+    'MVC-PHP-Skeleton',
     'worldwise',
     'usepopcorn',
   ];
@@ -105,13 +105,29 @@ export function Projects({ projects, setProjects }) {
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
                 <div className={styles.projectStats}>
-                  <span>⭐ {project.stargazers_count}</span>
-                  <span>🔀 {project.forks_count}</span>
+                  <div>
+                    <span>⭐ {project.stargazers_count}</span>
+                    <span>🔀 {project.forks_count}</span>
+                  </div>
+                  <img
+                    src={`https://img.shields.io/badge/${
+                      project.language
+                    }-323330?style=flat&logo=${project.language
+                      .split(' ')[0]
+                      .toLowerCase()}`}
+                    alt={`${project.language} badge`}
+                  />
                 </div>
               </div>
             ))}
         </div>
       )}
+
+      {selectedProject
+        ? document
+            .querySelector(':root')
+            .style.setProperty('overflow', 'hidden')
+        : document.querySelector(':root').style.setProperty('overflow', 'auto')}
 
       {selectedProject && (
         <ProjectModal
