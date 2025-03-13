@@ -16,10 +16,10 @@ export function Projects({ projects, setProjects }) {
   const specialProjects = [
     'tarek0m',
     'Graph-based-Movie-Recommendation-System',
+    'my-ecommerce-website',
     'google-flights-clone',
     'MVC-PHP-Skeleton',
     'worldwise',
-    'usepopcorn',
   ];
 
   useEffect(() => {
