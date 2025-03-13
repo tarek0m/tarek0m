@@ -63,7 +63,7 @@ Hello! I'm a passionate Full Stack Developer with expertise in modern web techno
   <br>
   <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false">
   <br>
-  <img alt="GitHub Streak" src="https://github-readme-streak-stats.herokuapp.com/?user=tarek0m&theme=github_dark_dimmed&hide_border=true">
+  <img alt="GitHub Streak" src="https://streak-stats.demolab.com/?user=tarek0m&theme=github_dark_dimmed&hide_border=true">
 </div>
 
 ## 🏆 GitHub Trophies
