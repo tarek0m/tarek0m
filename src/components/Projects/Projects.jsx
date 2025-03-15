@@ -30,7 +30,6 @@ export function Projects({ projects, setProjects }) {
         );
         const data = await response.json();
         setProjects(data);
-        console.log('Projects fetched:', data);
       } catch (error) {
         console.error('Error fetching projects:', error);
       } finally {
