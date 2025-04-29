@@ -19,7 +19,7 @@ export function Projects({ projects, setProjects }) {
     'my-ecommerce-website',
     'google-flights-clone',
     'MVC-PHP-Skeleton',
-    'worldwise',
+    'mern-chat-app',
   ];
 
   useEffect(() => {

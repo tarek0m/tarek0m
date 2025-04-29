@@ -11,11 +11,15 @@ import {
   FaPython,
 } from 'react-icons/fa';
 import {
+  SiTailwindcss,
   SiTypescript,
+  SiNextdotjs,
   SiMui,
   SiRedux,
+  SiExpress,
   SiGraphql,
   SiMysql,
+  SiMongodb,
   SiPhp,
   SiTensorflow,
 } from 'react-icons/si';
@@ -25,18 +29,22 @@ import { TbHexagonLetterAFilled } from 'react-icons/tb';
 
 const skillCategories = {
   Frontend: [
-    { name: 'React', icon: <FaReact />, level: 75 },
-    { name: 'JavaScript', icon: <FaJs />, level: 85 },
-    { name: 'TypeScript', icon: <SiTypescript />, level: 70 },
     { name: 'HTML5', icon: <FaHtml5 />, level: 90 },
     { name: 'CSS3', icon: <FaCss3 />, level: 90 },
+    { name: 'Tailwind', icon: <SiTailwindcss />, level: 65 },
+    { name: 'JavaScript', icon: <FaJs />, level: 85 },
+    { name: 'TypeScript', icon: <SiTypescript />, level: 70 },
+    { name: 'React', icon: <FaReact />, level: 75 },
+    { name: 'Next.js', icon: <SiNextdotjs />, level: 65 },
     { name: 'Material-UI', icon: <SiMui />, level: 80 },
     { name: 'Redux', icon: <SiRedux />, level: 65 },
   ],
   Backend: [
-    { name: 'Node.js', icon: <FaNode />, level: 25 },
     { name: 'PHP', icon: <SiPhp />, level: 65 },
+    { name: 'Node.js', icon: <FaNode />, level: 55 },
+    { name: 'Express.js', icon: <SiExpress />, level: 55 },
     { name: 'MySQL', icon: <SiMysql />, level: 75 },
+    { name: 'MongoDB', icon: <SiMongodb />, level: 65 },
     { name: 'REST APIs', icon: <AiOutlineApi />, level: 90 },
     { name: 'GraphQL', icon: <SiGraphql />, level: 65 },
   ],
