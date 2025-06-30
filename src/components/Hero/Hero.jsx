@@ -6,10 +6,10 @@ export function Hero() {
 
   useEffect(() => {
     const roles = [
+      'Software Engineer',
       'Full Stack Developer',
       'React Expert',
       'JavaScript Developer',
-      'Software Engineer',
     ];
     let currentRoleIndex = 0;
     let currentCharIndex = 0;

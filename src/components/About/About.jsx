@@ -30,7 +30,7 @@ export function About({ projects }) {
               <span className={styles.statLabel}>Projects</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>3</span>
+              <span className={styles.statNumber}>2</span>
               <span className={styles.statLabel}>Companies</span>
             </div>
           </div>

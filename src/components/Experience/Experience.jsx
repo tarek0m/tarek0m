@@ -33,31 +33,6 @@ export function Experience() {
     },
     {
       id: 2,
-      company: 'Pinerium',
-      position: 'Zoho Developer',
-      period: 'Jun 2023 - Dec 2023',
-      location: 'Alexandria, Egypt',
-      description:
-        'Developed and customized Zoho applications, translating client requirements into technical solutions.',
-      achievements: [
-        'Created responsive UIs for client applications.',
-        'Streamlined workflows and processes using Zoho Creator and Deluge scripting.',
-        'Gathered client requirements and provided ongoing support.',
-        'Maintained documentation and progress reports.',
-      ],
-      skills: [
-        'Deluge Script',
-        'Zoho Creator',
-        'HTML5',
-        'CSS3',
-        'JavaScript',
-        'REST APIs',
-        'System Integration',
-        'Agile',
-      ],
-    },
-    {
-      id: 3,
       company: 'HCMLT',
       position: 'Frontend Developer',
       period: 'Jul 2022 - Aug 2022',
