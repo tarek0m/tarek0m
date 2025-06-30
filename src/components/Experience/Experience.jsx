@@ -34,7 +34,7 @@ export function Experience() {
     {
       id: 2,
       company: 'HCMLT',
-      position: 'Frontend Developer',
+      position: 'Full-Stack Developer',
       period: 'Jul 2022 - Aug 2022',
       location: 'Alexandria, Egypt',
       description:
