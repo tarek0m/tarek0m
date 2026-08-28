@@ -56,24 +56,4 @@ Hello! I'm a passionate Full Stack Developer with expertise in modern web techno
   <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=flat-square&logo=notion&logoColor=white" alt="Notion">
 </div>
 
-# 📊 GitHub Stats:
-
-<div align="center">
-  <img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false&layout=compact">
-  <br>
-  <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=tarek0m&theme=github_dark_dimmed&hide_border=true&include_all_commits=false&count_private=false">
-  <br>
-  <img alt="GitHub Streak" src="https://streak-stats.demolab.com/?user=tarek0m&theme=github_dark_dimmed&hide_border=true">
-</div>
-
-## 🏆 GitHub Trophies
-
-![](https://github-profile-trophy.vercel.app/?username=tarek0m&theme=onedark&no-frame=true&no-bg=false&margin-w=4)
-
-## 🔝 Top Contributed Repo
-
-<div align="center">
-  <img src="https://github-contributor-stats.vercel.app/api?username=tarek0m&limit=5&theme=github_dark_dimmed&combine_all_yearly_contributions=true">
-</div>
-
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
