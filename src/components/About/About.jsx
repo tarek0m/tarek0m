@@ -30,7 +30,7 @@ export function About({ projects }) {
               <span className={styles.statLabel}>Projects</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>2</span>
+              <span className={styles.statNumber}>3</span>
               <span className={styles.statLabel}>Companies</span>
             </div>
           </div>
@@ -38,26 +38,31 @@ export function About({ projects }) {
         <div className={styles.description}>
           <h2>About Me</h2>
           <p>
-            Hello! I&apos;m a passionate Full Stack Developer with expertise in
-            modern web technologies. I love creating efficient, scalable, and
-            user-friendly applications that solve real-world problems.
+            Hello! I&apos;m a software engineer delivering customer-facing
+            features end to end on a large UK holiday-lettings platform in
+            Laravel, Inertia.js, React and TypeScript, working in English within
+            a distributed agile team.
           </p>
           <p>
-            With a strong foundation in both front-end and back-end development,
-            I bring ideas to life through clean code and intuitive design.
+            Previously the sole engineer on a multi-tenant SaaS subscription and
+            billing platform, I owned it from an empty database through Stripe
+            integration, webhook state synchronisation, dunning and suspension,
+            and supported it live after launch. I&apos;m experienced across PHP
+            and C#/.NET backends, relational data modelling, API design and
+            test-covered delivery.
           </p>
           <div className={styles.highlights}>
             <div className={styles.highlight}>
-              <h3>Problem Solver</h3>
-              <p>Tackling complex challenges with creative solutions</p>
+              <h3>End-to-End Ownership</h3>
+              <p>Taking features from schema and API through to the interface</p>
             </div>
             <div className={styles.highlight}>
-              <h3>Team Player</h3>
-              <p>Collaborating effectively in diverse environments</p>
+              <h3>Payments &amp; Integrations</h3>
+              <p>Stripe subscriptions, idempotent webhooks and billing lifecycles</p>
             </div>
             <div className={styles.highlight}>
-              <h3>Continuous Learner</h3>
-              <p>Always staying updated with latest technologies</p>
+              <h3>Test-Covered Delivery</h3>
+              <p>Unit and feature tests, code review and feature-flagged releases</p>
             </div>
           </div>
         </div>

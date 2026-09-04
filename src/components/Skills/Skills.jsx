@@ -3,60 +3,112 @@ import styles from './Skills.module.css';
 import {
   FaReact,
   FaJs,
-  FaHtml5,
-  FaCss3,
-  FaNode,
-  FaGit,
-  FaGithub,
   FaPython,
+  FaDatabase,
+  FaVial,
+  FaCubes,
+  FaSitemap,
+  FaToggleOn,
+  FaInfinity,
+  FaBolt,
+  FaExchangeAlt,
+  FaCodeBranch,
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
   SiTypescript,
   SiNextdotjs,
   SiMui,
-  SiRedux,
   SiExpress,
   SiGraphql,
   SiMysql,
   SiMongodb,
   SiPhp,
-  SiTensorflow,
+  SiSharp,
+  SiC,
+  SiDotnet,
+  SiLaravel,
+  SiInertia,
+  SiNodedotjs,
+  SiAngular,
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiReactivex,
+  SiJquery,
+  SiWebpack,
+  SiVite,
+  SiRedis,
+  SiStripe,
+  SiTwilio,
+  SiFirebase,
+  SiDocker,
+  SiGit,
+  SiJira,
 } from 'react-icons/si';
 import { AiOutlineApi } from 'react-icons/ai';
 import { DiScrum } from 'react-icons/di';
-import { TbHexagonLetterAFilled } from 'react-icons/tb';
 
 const skillCategories = {
-  Frontend: [
-    { name: 'HTML5', icon: <FaHtml5 />, level: 90 },
-    { name: 'CSS3', icon: <FaCss3 />, level: 90 },
-    { name: 'Tailwind', icon: <SiTailwindcss />, level: 65 },
-    { name: 'JavaScript', icon: <FaJs />, level: 85 },
-    { name: 'TypeScript', icon: <SiTypescript />, level: 70 },
-    { name: 'React', icon: <FaReact />, level: 75 },
-    { name: 'Next.js', icon: <SiNextdotjs />, level: 65 },
-    { name: 'Material-UI', icon: <SiMui />, level: 80 },
-    { name: 'Redux', icon: <SiRedux />, level: 65 },
+  Languages: [
+    { name: 'JavaScript', icon: <FaJs /> },
+    { name: 'TypeScript', icon: <SiTypescript /> },
+    { name: 'PHP', icon: <SiPhp /> },
+    { name: 'C#', icon: <SiSharp /> },
+    { name: 'SQL', icon: <FaDatabase /> },
+    { name: 'Python', icon: <FaPython /> },
+    { name: 'C', icon: <SiC /> },
   ],
   Backend: [
-    { name: 'PHP', icon: <SiPhp />, level: 65 },
-    { name: 'Node.js', icon: <FaNode />, level: 55 },
-    { name: 'Express.js', icon: <SiExpress />, level: 55 },
-    { name: 'MySQL', icon: <SiMysql />, level: 75 },
-    { name: 'MongoDB', icon: <SiMongodb />, level: 65 },
-    { name: 'REST APIs', icon: <AiOutlineApi />, level: 90 },
-    { name: 'GraphQL', icon: <SiGraphql />, level: 65 },
+    { name: 'ASP.NET Core', icon: <SiDotnet /> },
+    { name: '.NET 8', icon: <SiDotnet /> },
+    { name: 'Entity Framework Core', icon: <FaDatabase /> },
+    { name: 'Laravel', icon: <SiLaravel /> },
+    { name: 'Inertia.js', icon: <SiInertia /> },
+    { name: 'PHPUnit', icon: <FaVial /> },
+    { name: 'Node.js', icon: <SiNodedotjs /> },
+    { name: 'Express', icon: <SiExpress /> },
+    { name: 'REST APIs', icon: <AiOutlineApi /> },
+    { name: 'GraphQL', icon: <SiGraphql /> },
   ],
-  'Tools & Practices': [
-    { name: 'Git', icon: <FaGit />, level: 70 },
-    { name: 'GitHub', icon: <FaGithub />, level: 65 },
-    { name: 'Agile', icon: <TbHexagonLetterAFilled />, level: 85 },
-    { name: 'Scrum', icon: <DiScrum />, level: 85 },
+  Frontend: [
+    { name: 'React', icon: <FaReact /> },
+    { name: 'Angular', icon: <SiAngular /> },
+    { name: 'Next.js', icon: <SiNextdotjs /> },
+    { name: 'HTML5', icon: <SiHtml5 /> },
+    { name: 'CSS3', icon: <SiCss3 /> },
+    { name: 'SCSS', icon: <SiSass /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+    { name: 'RxJS', icon: <SiReactivex /> },
+    { name: 'jQuery', icon: <SiJquery /> },
+    { name: 'Material UI', icon: <SiMui /> },
+    { name: 'Webpack', icon: <SiWebpack /> },
+    { name: 'Vite', icon: <SiVite /> },
   ],
-  'AI & ML': [
-    { name: 'Python', icon: <FaPython />, level: 80 },
-    { name: 'TensorFlow', icon: <SiTensorflow />, level: 80 },
+  Databases: [
+    { name: 'MySQL', icon: <SiMysql /> },
+    { name: 'MongoDB', icon: <SiMongodb /> },
+    { name: 'Redis', icon: <SiRedis /> },
+    { name: 'Schema Design', icon: <FaSitemap /> },
+    { name: 'Migrations', icon: <FaExchangeAlt /> },
+    { name: 'Query Optimisation', icon: <FaBolt /> },
+  ],
+  'Payments & Integrations': [
+    { name: 'Stripe', icon: <SiStripe /> },
+    { name: 'Twilio', icon: <SiTwilio /> },
+    { name: 'Firebase Cloud Messaging', icon: <SiFirebase /> },
+  ],
+  Practices: [
+    { name: 'Domain & API Design', icon: <FaSitemap /> },
+    { name: 'SOLID & Design Patterns', icon: <FaCubes /> },
+    { name: 'Code Review', icon: <FaCodeBranch /> },
+    { name: 'Feature Flags', icon: <FaToggleOn /> },
+    { name: 'Unit & Feature Testing', icon: <FaVial /> },
+    { name: 'CI/CD', icon: <FaInfinity /> },
+    { name: 'Docker', icon: <SiDocker /> },
+    { name: 'Git', icon: <SiGit /> },
+    { name: 'Agile / Scrum', icon: <DiScrum /> },
+    { name: 'Jira', icon: <SiJira /> },
   ],
 };
 
@@ -79,16 +131,8 @@ export function Skills() {
             <div className={styles.skillsGrid}>
               {skills.map((skill) => (
                 <div key={skill.name} className={styles.skillItem}>
-                  <div className={styles.skillIcon}>{skill.icon}</div>
-                  <div className={styles.skillInfo}>
-                    <span>{skill.name}</span>
-                    <div className={styles.progressBar}>
-                      <div
-                        className={styles.progress}
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
+                  <span className={styles.skillIcon}>{skill.icon}</span>
+                  <span className={styles.skillName}>{skill.name}</span>
                 </div>
               ))}
             </div>
