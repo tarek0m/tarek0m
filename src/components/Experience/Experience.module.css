@@ -119,6 +119,54 @@
   line-height: 1.5;
 }
 
+.projectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.projectCard {
+  background: rgba(0, 123, 255, 0.04);
+  border: 1px solid rgba(0, 123, 255, 0.12);
+  border-left: 3px solid #007bff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.projectCard:hover {
+  background: rgba(0, 123, 255, 0.07);
+  border-color: rgba(0, 123, 255, 0.25);
+  border-left-color: #00c6ff;
+}
+
+.projectName {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  color: #007bff;
+}
+
+.projectContext {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+}
+
+.projectDescription {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.projectAchievements {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.projectAchievements li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -151,8 +199,20 @@
 }
 
 :global(.dark) .position,
-:global(.dark) .achievements h4 {
+:global(.dark) .achievements h4,
+:global(.dark) .projectName {
   color: #00c6ff;
+}
+
+:global(.dark) .projectCard {
+  background: rgba(0, 198, 255, 0.05);
+  border-color: rgba(0, 198, 255, 0.15);
+  border-left-color: #00c6ff;
+}
+
+:global(.dark) .projectCard:hover {
+  background: rgba(0, 198, 255, 0.09);
+  border-color: rgba(0, 198, 255, 0.3);
 }
 
 :global(.dark) .skillTag {
@@ -174,6 +234,15 @@
 
   .timelineContent {
     padding: 1.5rem;
+  }
+
+  .projectCards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .projectCard {
+    padding: 1.25rem;
   }
 
   .position {

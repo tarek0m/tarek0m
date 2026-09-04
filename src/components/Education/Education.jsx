@@ -14,6 +14,7 @@ export function Education() {
       degree: 'Bachelor in Computer and Communication Engineering',
       period: '2018 - 2023',
       location: 'Alexandria, Egypt',
+      grade: 'Grade: Very Good',
       courses: [
         'Data Structures',
         'Advanced Algorithms',
@@ -43,6 +44,8 @@ export function Education() {
                 <span>{edu.period}</span>
                 <span className={styles.divider}>•</span>
                 <span>{edu.location}</span>
+                <span className={styles.divider}>•</span>
+                <span>{edu.grade}</span>
               </div>
             </div>
             <div className={styles.cardBody}>

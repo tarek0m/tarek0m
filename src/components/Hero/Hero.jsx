@@ -7,9 +7,9 @@ export function Hero() {
   useEffect(() => {
     const roles = [
       'Software Engineer',
-      'Full Stack Developer',
-      'React Expert',
-      'JavaScript Developer',
+      'Full Stack Engineer',
+      'Laravel & React Developer',
+      '.NET & Angular Developer',
     ];
     let currentRoleIndex = 0;
     let currentCharIndex = 0;
@@ -58,7 +58,7 @@ export function Hero() {
   };
 
   return (
-    <section id='#' className={styles.hero}>
+    <section id='home' className={styles.hero}>
       <div className={styles.content}>
         <div className={styles.greeting}>Hello, I&apos;m</div>
         <h1 className={styles.name}>
@@ -70,8 +70,8 @@ export function Hero() {
           <span className={styles.cursor}>|</span>
         </div>
         <p className={styles.intro}>
-          Building beautiful, responsive web applications with modern
-          technologies. Passionate about creating seamless user experiences.
+          Shipping customer-facing features end to end relational schema, API
+          and interface across PHP/Laravel and C#/.NET platforms.
         </p>
         <div className={styles.cta}>
           <button
