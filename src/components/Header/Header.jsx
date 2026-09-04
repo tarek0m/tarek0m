@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useTheme } from '../../context/useTheme';
-import tarek from '../../../public/tarek.svg';
 import styles from './Header.module.css';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
@@ -8,11 +7,11 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('#');
+  const [activeSection, setActiveSection] = useState('home');
 
   const navItems = useMemo(
     () => [
-      { label: '', id: '#' },
+      { label: '', id: 'home' },
       { label: 'About', id: 'about' },
       { label: 'Skills', id: 'skills' },
       { label: 'Projects', id: 'projects' },
@@ -38,7 +37,11 @@ export function Header() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            window.history.pushState(null, '', `#${entry.target.id}`);
+            const url =
+              entry.target.id === 'home'
+                ? window.location.pathname
+                : `#${entry.target.id}`;
+            window.history.replaceState(null, '', url);
           }
         });
       },
@@ -64,14 +67,16 @@ export function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <button className={styles.logoBtn} onClick={() => scrollToSection('#')}>
-          <img src={tarek} alt='Logo' className={styles.logoImg} />
+        <button className={styles.logoBtn} onClick={() => scrollToSection('home')}>
+          <img src='/tarek.svg' alt='Logo' className={styles.logoImg} />
           <span>Portfolio</span>
         </button>
 
         <button
           className={styles.menuButton}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X /> : <Menu />}
         </button>

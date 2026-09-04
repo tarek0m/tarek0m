@@ -17,9 +17,16 @@ export function ProjectModal({ project, onClose }) {
     <div className={styles.modalOverlay} onClick={onClose}>
       <div
         className={`${styles.modalContent} ${styles.slideIn}`}
+        role='dialog'
+        aria-modal='true'
+        aria-label={`${project.name} README`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className={styles.closeButton} onClick={onClose}>
+        <button
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label='Close'
+        >
           ×
         </button>
         <div className={styles.readme}>

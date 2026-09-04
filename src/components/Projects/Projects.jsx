@@ -26,10 +26,11 @@ export function Projects({ projects, setProjects }) {
     async function fetchProjects() {
       try {
         const response = await fetch(
-          'https://api.github.com/users/tarek0m/repos'
+          'https://api.github.com/users/tarek0m/repos?per_page=100'
         );
         const data = await response.json();
-        setProjects(data);
+        // The API answers errors with an object, not an array
+        setProjects(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error('Error fetching projects:', error);
       } finally {
@@ -40,9 +41,18 @@ export function Projects({ projects, setProjects }) {
     fetchProjects();
   }, [setProjects]);
 
+  // Lock the page behind the modal instead of mutating the DOM while rendering
+  useEffect(() => {
+    const root = document.querySelector(':root');
+    root.style.setProperty('overflow', selectedProject ? 'hidden' : 'auto');
+
+    return () => root.style.setProperty('overflow', 'auto');
+  }, [selectedProject]);
+
   async function fetchReadme(project) {
     try {
       const response = await fetchReadmeContent(project);
+      if (!response.content) return null;
       const decodedContent = decodeBase64Content(response.content);
       return decodedContent;
     } catch (error) {
@@ -78,7 +88,9 @@ export function Projects({ projects, setProjects }) {
 
   async function handleProjectClick(project) {
     const readme = await fetchReadme(project);
-    const updatedReadme = convertRelativeImageUrls(readme, project.name);
+    const updatedReadme = readme
+      ? convertRelativeImageUrls(readme, project.name)
+      : null;
     setSelectedProject({ ...project, readme: updatedReadme });
   }
 
@@ -99,7 +111,15 @@ export function Projects({ projects, setProjects }) {
               <div
                 key={project.id}
                 className={styles.projectCard}
+                role='button'
+                tabIndex={0}
                 onClick={() => handleProjectClick(project)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleProjectClick(project);
+                  }
+                }}
               >
                 <h3>{project.name}</h3>
                 <p>{project.description}</p>
@@ -108,25 +128,21 @@ export function Projects({ projects, setProjects }) {
                     <span>⭐ {project.stargazers_count}</span>
                     <span>🔀 {project.forks_count}</span>
                   </div>
-                  <img
-                    src={`https://img.shields.io/badge/${
-                      project.language
-                    }-323330?style=flat&logo=${project.language
-                      .split(' ')[0]
-                      .toLowerCase()}`}
-                    alt={`${project.language} badge`}
-                  />
+                  {project.language && (
+                    <img
+                      src={`https://img.shields.io/badge/${
+                        project.language
+                      }-323330?style=flat&logo=${project.language
+                        .split(' ')[0]
+                        .toLowerCase()}`}
+                      alt={`${project.language} badge`}
+                    />
+                  )}
                 </div>
               </div>
             ))}
         </div>
       )}
-
-      {selectedProject
-        ? document
-            .querySelector(':root')
-            .style.setProperty('overflow', 'hidden')
-        : document.querySelector(':root').style.setProperty('overflow', 'auto')}
 
       {selectedProject && (
         <ProjectModal

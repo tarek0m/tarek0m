@@ -58,7 +58,7 @@ export function Hero() {
   };
 
   return (
-    <section id='#' className={styles.hero}>
+    <section id='home' className={styles.hero}>
       <div className={styles.content}>
         <div className={styles.greeting}>Hello, I&apos;m</div>
         <h1 className={styles.name}>
