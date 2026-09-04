@@ -51,11 +51,11 @@ export function Experience() {
             'Subscription and billing platform for a multi-tenant retail POS and commerce SaaS, taken from an empty schema to a live system carrying real paying subscriptions.',
           achievements: [
             'Built the billing platform end to end as its sole engineer: relational schema, EF Core migrations, domain services, REST API, Stripe integration, webhook processing, notifications and the Angular admin surface.',
-            'Led a schema redesign against live tables that moved payment-gateway state onto the subscription row keyed by gateway invoice ID - the change that made webhook processing idempotent.',
+            'Led a schema redesign against live tables that moved payment-gateway state onto the subscription row keyed by gateway invoice ID, the change that made webhook processing idempotent.',
             'Engineered idempotent Stripe webhook handlers, classifying each event as creation, plan change or renewal from application state rather than trusting gateway metadata.',
             'Owned the subscription and payment-failure lifecycle: proration previews, downgrade validation, past-due transitions, manual retry, invoice voiding, platform-wide tenant suspension and automatic reactivation.',
             'Identified and remediated a broken object-level authorization (IDOR) gap by enforcing tenant-ownership validation and replacing exposed gateway identifiers with opaque internal GUIDs.',
-            'Reduced a paginated list endpoint from over 30 seconds - and over 5 minutes on 5,000+ orders - to 3-5 seconds by reshaping EF Core queries and moving paging and sorting server-side.',
+            'Reduced a paginated list endpoint from over 30 seconds, and over 5 minutes on 5,000+ orders, to 3-5 seconds by reshaping EF Core queries and moving paging and sorting server-side.',
           ],
           skills: [
             'C#',

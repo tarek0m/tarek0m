@@ -70,8 +70,8 @@ export function Hero() {
           <span className={styles.cursor}>|</span>
         </div>
         <p className={styles.intro}>
-          Shipping customer-facing features end to end - relational schema, API
-          and interface - across PHP/Laravel and C#/.NET platforms.
+          Shipping customer-facing features end to end relational schema, API
+          and interface across PHP/Laravel and C#/.NET platforms.
         </p>
         <div className={styles.cta}>
           <button
