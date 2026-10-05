@@ -19,17 +19,19 @@ export function Experience() {
         'Delivering customer-facing features end to end across PHP/Laravel and C#/.NET products, working in English within a distributed agile team.',
       projects: [
         {
-          name: 'UK Holiday Accommodation Marketplace',
-          context: 'Confidential client · Owner portal & rental platform',
+          name: 'Forge Holiday Group - Sykes Holiday Cottages',
+          context: 'Client project · Owner portal & rental platform',
           description:
-            'Large UK holiday-lettings platform managing 20,000+ properties across multiple regional brands.',
+            'UK holiday-lettings group operating 23 regional brands and representing over 23,000 holiday homes.',
           achievements: [
-            'Delivered four owner-facing features end to end on a ground-up rebuild of the owner portal: performance summary, booking calendar, optimisation actions and pricing optimisation.',
-            'Designed and shipped a self-service Early Check-In workflow behind a feature flag, re-scoping it from owner-level to property-level configuration when the original model proved too coarse.',
+            'Owned four owner-facing feature verticals end to end in a greenfield Laravel 12, Inertia.js and React portal: performance summary, booking calendar, pricing-tier upgrades and calendar sync, each from database permission migration through API integration, domain service, controller, TypeScript React interface and tests.',
+            'Designed and shipped a self-service Early Check-In workflow letting owners opt in and out without contacting support, re-scoping it from owner-level to property-level configuration when the original model proved too coarse, released behind a feature flag.',
             'Owned the integration of internal booking and revenue-management data into owner-facing dashboards, defining the request and DTO layer with explicit zero-data and unavailable-data behaviour.',
-            'Built year-on-year property performance reporting with month-level filtering, and integrated owner-to-customer messaging into booking records.',
+            'Built year-on-year property performance reporting with month-level filtering, integrated owner-to-customer messaging into booking records, and resolved inconsistencies between the web and mobile-app flows.',
+            'Authored 13 production MySQL migrations with foreign keys, named indexes, data backfills and reversible rollbacks, splitting one apart after review showed it would force a full table rebuild in production.',
+            'Wrote 258 automated tests across 27 files at unit, feature and component level, including a cross-endpoint suite proving a replacement API endpoint matched the original on every unchanged rule before deprecation.',
             'Replaced hardcoded region-to-team mappings in the enterprise CRM with database-driven task routing, removing the need for a code release on every change.',
-            'Extended conversational bot flows across SMS and WhatsApp with exit-reason and disposition metadata using Twilio Studio.',
+            'Extended conversational bot flows across SMS and WhatsApp with exit-reason and disposition metadata using Twilio Studio, and remediated a vulnerable dependency across affected services.',
           ],
           skills: [
             'PHP',
@@ -46,16 +48,19 @@ export function Experience() {
         },
         {
           name: 'AlCashier - Multi-Tenant Retail POS SaaS',
-          context: 'Internal product · Sole engineer on subscriptions & billing',
+          context:
+            'Internal product · Sole engineer on subscriptions & billing · Jul 2025 - Jan 2026',
           description:
             'Subscription and billing platform for a multi-tenant retail POS and commerce SaaS, taken from an empty schema to a live system carrying real paying subscriptions.',
           achievements: [
             'Built the billing platform end to end as its sole engineer: relational schema, EF Core migrations, domain services, REST API, Stripe integration, webhook processing, notifications and the Angular admin surface.',
             'Led a schema redesign against live tables that moved payment-gateway state onto the subscription row keyed by gateway invoice ID, the change that made webhook processing idempotent.',
-            'Engineered idempotent Stripe webhook handlers, classifying each event as creation, plan change or renewal from application state rather than trusting gateway metadata.',
+            'Engineered idempotent Stripe webhook handlers for invoice payment, payment failure, uncollectible invoices and subscription updates and deletions, classifying each event as creation, plan change or renewal from application state rather than trusting gateway metadata.',
             'Owned the subscription and payment-failure lifecycle: proration previews, downgrade validation, past-due transitions, manual retry, invoice voiding, platform-wide tenant suspension and automatic reactivation.',
             'Identified and remediated a broken object-level authorization (IDOR) gap by enforcing tenant-ownership validation and replacing exposed gateway identifiers with opaque internal GUIDs.',
-            'Reduced a paginated list endpoint from over 30 seconds, and over 5 minutes on 5,000+ orders, to 3-5 seconds by reshaping EF Core queries and moving paging and sorting server-side.',
+            'Reduced a paginated list endpoint from over 30 seconds, and over 5 minutes on 5,000+ orders, to 3-5 seconds by reshaping EF Core queries, eliminating N+1 access and moving paging and sorting server-side.',
+            'Supported the platform in production after launch, resolving live subscription incidents by debugging webhook delivery and transactional email against the live Stripe account.',
+            'Presented and defended design decisions to the senior engineer and CTO, including keeping raw-body HMAC signature verification against a proposed change that would have invalidated it.',
           ],
           skills: [
             'C#',
