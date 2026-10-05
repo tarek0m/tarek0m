@@ -13,6 +13,7 @@ import {
   FaBolt,
   FaExchangeAlt,
   FaCodeBranch,
+  FaRobot,
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
@@ -101,6 +102,8 @@ const skillCategories = {
   Practices: [
     { name: 'Domain & API Design', icon: <FaSitemap /> },
     { name: 'SOLID & Design Patterns', icon: <FaCubes /> },
+    { name: 'Service-to-Service Integration', icon: <FaExchangeAlt /> },
+    { name: 'AI-Assisted Development', icon: <FaRobot /> },
     { name: 'Code Review', icon: <FaCodeBranch /> },
     { name: 'Feature Flags', icon: <FaToggleOn /> },
     { name: 'Unit & Feature Testing', icon: <FaVial /> },
