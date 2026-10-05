@@ -19,8 +19,8 @@ export function Experience() {
         'Delivering customer-facing features end to end across PHP/Laravel and C#/.NET products, working in English within a distributed agile team.',
       projects: [
         {
-          name: 'UK Holiday Accommodation Marketplace',
-          context: 'Confidential client · Owner portal & rental platform',
+          name: 'Forge Holiday Group - Sykes Holiday Cottages',
+          context: 'Client project · Owner portal & rental platform',
           description:
             'UK holiday-lettings group operating 23 regional brands and representing over 23,000 holiday homes.',
           achievements: [
