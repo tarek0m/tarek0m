@@ -4,10 +4,9 @@ import styles from './Experience.module.css';
 export function Experience() {
   const { ref, inView } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
 
-  // This would be replaced with your actual work experience
   const experiences = [
     {
       id: 1,
@@ -162,7 +161,7 @@ export function Experience() {
               ) : (
                 <>
                   <div className={styles.achievements}>
-                    <h4>Key Achievements:</h4>
+                    <h4>Key Achievements</h4>
                     <ul>
                       {exp.achievements.map((achievement, i) => (
                         <li key={i}>{achievement}</li>

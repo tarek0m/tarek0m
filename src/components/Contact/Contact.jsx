@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import styles from './Contact.module.css';
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5';
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
+
+const EMAIL = 'tarek.alnaggar@outlook.com';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -10,10 +12,6 @@ export function Contact() {
     subject: '',
     message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-  // const [errorMessage, setErrorMessage] = useState('');
-  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,67 +21,13 @@ export function Contact() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  // There is no backend, so hand the message to the visitor's email client
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission with a timeout
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
-
-    // try {
-    //   const response = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-
-    //   const data = await response.json();
-
-    //   if (response.ok) {
-    //     setSubmitStatus('success');
-    //     // Reset form
-    //     setFormData({
-    //       name: '',
-    //       email: '',
-    //       subject: '',
-    //       message: '',
-    //     });
-
-    //     // Clear success message after 5 seconds
-    //     setTimeout(() => {
-    //       setSubmitStatus(null);
-    //     }, 5000);
-    //   } else {
-    //     setSubmitStatus('error');
-    //     setErrorMessage(
-    //       data.message || 'Failed to send message. Please try again.'
-    //     );
-    //   }
-    // } catch (error) {
-    //   setSubmitStatus('error');
-    //   setErrorMessage('An unexpected error occurred. Please try again later.');
-    //   console.error(error);
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+    const body = `${formData.message}\n\n${formData.name}\n${formData.email}`;
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -92,8 +36,8 @@ export function Contact() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.title}>Get In Touch</h2>
           <p className={styles.subtitle}>
-            Have a project in mind or want to collaborate? Feel free to reach
-            out!
+            Have a role, project or question in mind? I&apos;d be glad to hear
+            from you.
           </p>
         </div>
 
@@ -101,19 +45,16 @@ export function Contact() {
           <div className={styles.infoColumn}>
             <div className={styles.infoCard}>
               <h3>Contact Information</h3>
-              <p>
-                Feel free to reach out through any of the following channels:
-              </p>
 
               <div className={styles.contactInfo}>
-                <div className={styles.infoItem}>
+                <a className={styles.infoItem} href={`mailto:${EMAIL}`}>
                   <Mail className={styles.icon} />
-                  <span>tarek.alnaggar@outlook.com</span>
-                </div>
-                <div className={styles.infoItem}>
+                  <span>{EMAIL}</span>
+                </a>
+                <a className={styles.infoItem} href='tel:+201272152825'>
                   <Phone className={styles.icon} />
-                  <span>+2 0127 215 2825</span>
-                </div>
+                  <span>+20 127 215 2825</span>
+                </a>
                 <div className={styles.infoItem}>
                   <MapPin className={styles.icon} />
                   <span>Alexandria, Egypt</span>
@@ -127,7 +68,7 @@ export function Contact() {
                   rel='noreferrer'
                   aria-label='LinkedIn'
                 >
-                  <IoLogoLinkedin size={23} />
+                  <IoLogoLinkedin size={22} />
                 </a>
                 <a
                   href='https://github.com/tarek0m'
@@ -135,14 +76,14 @@ export function Contact() {
                   rel='noreferrer'
                   aria-label='GitHub'
                 >
-                  <IoLogoGithub size={23} />
+                  <IoLogoGithub size={22} />
                 </a>
               </div>
             </div>
           </div>
 
           <div className={styles.formColumn}>
-            <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor='name'>Name</label>
@@ -196,26 +137,13 @@ export function Contact() {
                 ></textarea>
               </div>
 
-              <button
-                type='submit'
-                className={styles.submitBtn}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <button type='submit' className={styles.submitBtn}>
+                Send Message
                 <Send className={styles.sendIcon} size={18} />
               </button>
-
-              {submitStatus === 'success' && (
-                <div className={styles.successMessage}>
-                  <p>Your message has been sent successfully!</p>
-                </div>
-              )}
-
-              {/* {submitStatus === 'error' && (
-                <div className={styles.errorMessage}>
-                  <p>{errorMessage}</p>
-                </div>
-              )} */}
+              <p className={styles.formNote}>
+                Opens your email app with the message ready to send.
+              </p>
             </form>
           </div>
         </div>

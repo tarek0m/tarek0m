@@ -13,9 +13,9 @@ export function Header() {
     () => [
       { label: '', id: 'home' },
       { label: 'About', id: 'about' },
+      { label: 'Experience', id: 'experience' },
       { label: 'Skills', id: 'skills' },
       { label: 'Projects', id: 'projects' },
-      { label: 'Experience', id: 'experience' },
       { label: 'Education', id: 'education' },
       { label: 'Contact', id: 'contact' },
     ],
@@ -45,7 +45,7 @@ export function Header() {
           }
         });
       },
-      { threshold: 0.5 }
+      { rootMargin: '-45% 0px -50% 0px' }
     );
 
     navItems.forEach((item) => {
@@ -68,8 +68,7 @@ export function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <button className={styles.logoBtn} onClick={() => scrollToSection('home')}>
-          <img src='/tarek.svg' alt='Logo' className={styles.logoImg} />
-          <span>Portfolio</span>
+          Tarek Alnaggar
         </button>
 
         <button
@@ -82,10 +81,9 @@ export function Header() {
         </button>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
-          {navItems.map((item) =>
-            item.label === '' ? (
-              ''
-            ) : (
+          {navItems
+            .filter((item) => item.label)
+            .map((item) => (
               <button
                 key={item.id}
                 className={`${styles.navItem} ${
@@ -95,8 +93,7 @@ export function Header() {
               >
                 {item.label}
               </button>
-            )
-          )}
+            ))}
           <button
             className={styles.themeToggle}
             onClick={toggleTheme}

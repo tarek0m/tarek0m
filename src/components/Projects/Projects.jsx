@@ -4,13 +4,14 @@ import { useInView } from 'react-intersection-observer';
 import styles from './Projects.module.css';
 import { ProjectModal } from '@components/ProjectModal/ProjectModal';
 import Spinner from '../Spinner/Spinner';
+import { ArrowRight, Star } from 'lucide-react';
 
 export function Projects({ projects, setProjects }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const { ref, inView } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
 
   const specialProjects = [
@@ -48,6 +49,10 @@ export function Projects({ projects, setProjects }) {
 
     return () => root.style.setProperty('overflow', 'auto');
   }, [selectedProject]);
+
+  const featuredProjects = projects.filter((project) =>
+    specialProjects.includes(project.name)
+  );
 
   async function fetchReadme(project) {
     try {
@@ -101,47 +106,60 @@ export function Projects({ projects, setProjects }) {
         <div className={styles.loading}>
           <Spinner />
         </div>
+      ) : featuredProjects.length === 0 ? (
+        <p className={styles.empty}>
+          Projects couldn&apos;t be loaded right now. You can browse them on{' '}
+          <a href='https://github.com/tarek0m' target='_blank' rel='noreferrer'>
+            GitHub
+          </a>
+          .
+        </p>
       ) : (
         <div
           className={`${styles.projectsGrid} ${inView ? styles.fadeIn : ''}`}
         >
-          {projects
-            .filter((project) => specialProjects.includes(project.name))
-            .map((project) => (
-              <div
-                key={project.id}
-                className={styles.projectCard}
-                role='button'
-                tabIndex={0}
-                onClick={() => handleProjectClick(project)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleProjectClick(project);
-                  }
-                }}
-              >
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <div className={styles.projectStats}>
-                  <div>
-                    <span>⭐ {project.stargazers_count}</span>
-                    <span>🔀 {project.forks_count}</span>
-                  </div>
-                  {project.language && (
-                    <img
-                      src={`https://img.shields.io/badge/${
-                        project.language
-                      }-323330?style=flat&logo=${project.language
-                        .split(' ')[0]
-                        .toLowerCase()}`}
-                      alt={`${project.language} badge`}
-                    />
-                  )}
-                </div>
+          {featuredProjects.map((project) => (
+            <div
+              key={project.id}
+              className={styles.projectCard}
+              role='button'
+              tabIndex={0}
+              onClick={() => handleProjectClick(project)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleProjectClick(project);
+                }
+              }}
+            >
+              <h3>{project.name.replace(/[-_]/g, ' ')}</h3>
+              <p>{project.description}</p>
+              <div className={styles.projectStats}>
+                {project.language && (
+                  <span className={styles.language}>{project.language}</span>
+                )}
+                <span className={styles.stars}>
+                  <Star size={15} aria-hidden='true' />
+                  {project.stargazers_count}
+                </span>
+                <span className={styles.readMore}>
+                  Details <ArrowRight size={15} aria-hidden='true' />
+                </span>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
+      )}
+
+      {!loading && featuredProjects.length > 0 && (
+        <a
+          className={styles.githubLink}
+          href='https://github.com/tarek0m'
+          target='_blank'
+          rel='noreferrer'
+        >
+          More on GitHub <ArrowRight size={16} aria-hidden='true' />
+        </a>
       )}
 
       {selectedProject && (

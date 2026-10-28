@@ -33,26 +33,34 @@
 .closeButton {
   position: sticky;
   top: 0;
-  right: 0;
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-dark);
-  background-color: var(--text-light);
   border-radius: 50%;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  font-size: 1.5rem;
   line-height: 1;
+  cursor: pointer;
+  color: var(--text-light);
+  background: var(--secondary-light);
   display: flex;
   align-items: center;
+  justify-content: center;
   z-index: 10;
+  transition: background 0.2s ease;
 }
 
 .closeButton:hover {
-  opacity: 1;
+  background: rgba(0, 123, 255, 0.15);
 }
+
+:global(.dark) .closeButton {
+  color: var(--text-dark);
+  background: var(--secondary-dark);
+}
+
 .readme {
-  margin-top: 1.5rem;
+  margin-top: -1rem;
 
   line-height: 1.6;
 }
@@ -120,8 +128,8 @@
   background: var(--secondary-dark);
 }
 
-:global(.dark) a {
-  color: #007bff;
+:global(.dark) .readme a {
+  color: #00c6ff;
 }
 
 /* Scrollbar styling */
