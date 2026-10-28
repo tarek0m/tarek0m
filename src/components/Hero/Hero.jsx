@@ -15,7 +15,7 @@ export function Hero() {
         <h1 className={styles.name}>
           <img src='/TarekAlnaggarHandwritten.svg' alt='Tarek Alnaggar' />
         </h1>
-        <p className={styles.role}>Software Engineer at Enozom</p>
+        <p className={styles.role}>Software Engineer</p>
         <p className={styles.stack}>
           Laravel &amp; React <span aria-hidden='true'>·</span> .NET &amp;
           Angular
