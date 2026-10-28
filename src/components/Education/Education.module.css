@@ -1,18 +1,18 @@
 .education {
-  padding: 4rem 2rem;
-  max-width: 1200px;
+  padding: 5rem 2rem;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem;
   font-size: 2.5rem;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -28,17 +28,10 @@
   flex-direction: column;
   opacity: 0;
   transform: translateY(20px);
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card.animate {
   animation: fadeUp 0.6s ease forwards;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .cardHeader {
@@ -60,9 +53,10 @@
 }
 
 .details {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 0.95rem;
+  opacity: 0.85;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -132,10 +126,6 @@
   border-color: rgba(244, 244, 244, 0.05);
 }
 
-:global(.dark) .card:hover {
-  box-shadow: 0 10px 25px rgba(244, 244, 244, 0.1);
-}
-
 /* :global(.dark) .cardHeader {
   background: linear-gradient(135deg, #00c6ff, #00ff88);
 } */
@@ -151,6 +141,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .education {
+    padding: 4rem 1.25rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }

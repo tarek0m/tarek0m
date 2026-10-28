@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem('theme') || 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -12,6 +18,11 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.className = theme;
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      // Storage can be blocked; the theme still applies for this visit
+    }
   }, [theme]);
 
   return (

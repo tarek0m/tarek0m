@@ -4,7 +4,7 @@ import styles from './Education.module.css';
 export function Education() {
   const { ref, inView } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
 
   const education = [
@@ -29,7 +29,7 @@ export function Education() {
 
   return (
     <section ref={ref} id='education' className={styles.education}>
-      <h2 className={styles.title}>Education & Certifications</h2>
+      <h2 className={styles.title}>Education</h2>
       <div className={styles.cards}>
         {education.map((edu, index) => (
           <div
@@ -50,7 +50,7 @@ export function Education() {
             </div>
             <div className={styles.cardBody}>
               <div className={styles.courses}>
-                <h4>Relevant Courses:</h4>
+                <h4>Relevant Courses</h4>
                 <div className={styles.coursesList}>
                   {edu.courses.map((course) => (
                     <span key={course} className={styles.courseTag}>

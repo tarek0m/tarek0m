@@ -1,55 +1,6 @@
-import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 
 export function Hero() {
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const roles = [
-      'Software Engineer',
-      'Full Stack Engineer',
-      'Laravel & React Developer',
-      '.NET & Angular Developer',
-    ];
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-
-    function typeText() {
-      const currentRole = roles[currentRoleIndex];
-
-      if (isDeleting) {
-        currentCharIndex--;
-        typingSpeed = 50;
-      } else {
-        currentCharIndex++;
-        typingSpeed = 150;
-      }
-
-      if (textRef.current) {
-        textRef.current.textContent = currentRole.substring(
-          0,
-          currentCharIndex
-        );
-      }
-
-      if (!isDeleting && currentCharIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 1500; // Pause at the end
-      } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-      }
-
-      setTimeout(typeText, typingSpeed);
-    }
-
-    const typingTimeout = setTimeout(typeText, 1000);
-
-    return () => clearTimeout(typingTimeout);
-  }, []);
-
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -64,11 +15,11 @@ export function Hero() {
         <h1 className={styles.name}>
           <img src='/TarekAlnaggarHandwritten.svg' alt='Tarek Alnaggar' />
         </h1>
-        <div className={styles.roleWrapper}>
-          <span className={styles.roleIntro}>I&apos;m a </span>
-          <span ref={textRef} className={styles.role}></span>
-          <span className={styles.cursor}>|</span>
-        </div>
+        <p className={styles.role}>Software Engineer at Enozom</p>
+        <p className={styles.stack}>
+          Laravel &amp; React <span aria-hidden='true'>·</span> .NET &amp;
+          Angular
+        </p>
         <p className={styles.intro}>
           Shipping customer-facing features end to end, from relational schema
           and API to interface, across PHP/Laravel and C#/.NET platforms.
@@ -76,7 +27,7 @@ export function Hero() {
         <div className={styles.cta}>
           <button
             className={styles.primaryBtn}
-            onClick={() => scrollToSection('projects')}
+            onClick={() => scrollToSection('experience')}
           >
             View My Work
           </button>
@@ -86,16 +37,6 @@ export function Hero() {
           >
             Contact Me
           </button>
-        </div>
-      </div>
-      <div className={styles.scrollDown}>
-        <div className={styles.mouse}>
-          <div className={styles.wheel}></div>
-        </div>
-        <div className={styles.arrows}>
-          <span className={styles.arrow}></span>
-          <span className={styles.arrow}></span>
-          <span className={styles.arrow}></span>
         </div>
       </div>
     </section>
