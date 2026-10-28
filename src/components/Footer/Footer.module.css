@@ -1,0 +1,50 @@
+.footer {
+  border-top: 1px solid rgba(52, 58, 64, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.container > span {
+  opacity: 0.7;
+}
+
+.links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.links a {
+  display: flex;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+  color: #007bff;
+}
+
+/* Dark theme adjustments */
+:global(.dark) .footer {
+  border-top-color: rgba(244, 244, 244, 0.08);
+}
+
+:global(.dark) .links a:hover {
+  color: #00c6ff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.25rem;
+  }
+}

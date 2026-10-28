@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export function About({ projects }) {
   const { ref, inView } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
 
   return (
@@ -15,7 +15,7 @@ export function About({ projects }) {
           <div className={styles.photo}>
             <img
               src='https://avatars.githubusercontent.com/u/71155320?v=4'
-              alt='Profile'
+              alt='Tarek Alnaggar'
             />
           </div>
           <div className={styles.stats}>
@@ -25,10 +25,12 @@ export function About({ projects }) {
               </span>
               <span className={styles.statLabel}>Years Experience</span>
             </div>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>{projects.length}+</span>
-              <span className={styles.statLabel}>Projects</span>
-            </div>
+            {projects.length > 0 && (
+              <div className={styles.statItem}>
+                <span className={styles.statNumber}>{projects.length}+</span>
+                <span className={styles.statLabel}>Projects</span>
+              </div>
+            )}
             <div className={styles.statItem}>
               <span className={styles.statNumber}>3</span>
               <span className={styles.statLabel}>Companies</span>

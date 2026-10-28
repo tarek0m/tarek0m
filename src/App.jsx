@@ -8,6 +8,7 @@ import { Projects } from '@components/Projects/Projects';
 import { Experience } from '@components/Experience/Experience';
 import { Education } from '@components/Education/Education';
 import { Contact } from '@components/Contact/Contact';
+import { Footer } from '@components/Footer/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -27,17 +28,18 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className={`${styles.app}`}>
+      <div className={styles.app}>
         <Header />
         <main>
           <Hero />
           <About projects={projects} />
+          <Experience />
           <Skills />
           <Projects projects={projects} setProjects={setProjects} />
-          <Experience />
           <Education />
           <Contact />
         </main>
+        <Footer />
       </div>
       <Analytics />
       <SpeedInsights />
